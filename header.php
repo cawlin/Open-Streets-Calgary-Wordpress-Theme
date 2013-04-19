@@ -28,14 +28,13 @@
 		<?php do_action( 'before' ); ?>
 			<header id="masthead" class="site-header" role="banner">
 				<hgroup>
-					<h1 class="site-title">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<h1><img src="<?php bloginfo('template_directory'); ?>/images/open-streets-calgary-logo.png" width="620" height="107" alt="Open Streets Calgary"></h1>
 				</hgroup>
 				
 				<nav id="site-navigation" role="navigation">
 					<div class="screen-reader-text skip-link">
 						<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'open_streets_calgary' ); ?>"><?php _e( 'Skip to content', 'open_streets_calgary' ); ?></a>
 					</div>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>	
+					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				</nav><!-- #site-navigation -->
 			</header><!-- #masthead -->

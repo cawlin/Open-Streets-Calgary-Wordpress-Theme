@@ -165,5 +165,52 @@ object {
 	display: block;
 }
 
-/* =responsive bootstrap
+/* =begin customizations
+---------------------------------------------------------------------------------------------- */
+
+
+a {
+	color: #2f5aa9;
+}
+
+/* =header
 ----------------------------------------------- */
+
+
+
+#site-navigation {
+	border-bottom: 1px solid #d8d8d8;
+	padding: 30px 0 10px 0;
+}
+
+#site-navigation .menu ul {
+	font-size: 20px;
+	font-weight: bold;
+	margin: 0;
+}
+
+#site-navigation .menu li {
+	display: inline-block;
+	padding-right: 20px;
+}
+
+#site-navigation .menu li a {
+	color: #333;
+}
+
+#site-navigation .screen-reader-text {
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
+
+
+
+
+
+
+
+
