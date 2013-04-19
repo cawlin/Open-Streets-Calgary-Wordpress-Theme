@@ -1,22 +1,23 @@
 <?php
 /**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * Template Name: homepage
+ * 
+ * The template for displaying our custom homepage
  *
  * @package Open Streets Calgary
  */
 
 get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
-
-<article <?php post_class(); ?>>
+	
+<article>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 	</header><!-- .entry-header -->
+	
+	<div id="splash-image">
+		<?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+	</div>
 
 	<div class="row">
 		<div class="span7">
@@ -25,14 +26,7 @@ get_header(); ?>
 			<?php edit_post_link( __( 'Edit', 'open_streets_calgary' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 		</div><!-- .span7 -->
 		<div class="span4 offset1">
-			<?php
-				// add featured thumbnail and extra featured thumbnails via plugin
-				if ( has_post_thumbnail() ) { the_post_thumbnail(); }
-				if( class_exists( 'kdMultipleFeaturedImages' ) ) {
-			    	kd_mfi_the_featured_image( 'featured-image-2', 'page' );
-					kd_mfi_the_featured_image( 'featured-image-2', 'page' );
-				}
-			?>
+			<?php dynamic_sidebar( 'homepage-quote-area' ); ?>
 		</div><!-- .span4 -->
 	</div><!-- .row -->
 </article><!-- #post-## -->

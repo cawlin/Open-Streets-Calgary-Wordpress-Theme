@@ -8,19 +8,36 @@
  */
 ?>
 
-	</div><!-- #main -->
-
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<?php do_action( 'open_streets_calgary_credits' ); ?>
-			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'open_streets_calgary' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'open_streets_calgary' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'open_streets_calgary' ), 'Open Streets Calgary', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
+	<footer id="colophon" class="row" role="contentinfo">
+		<div class="span4">
+			<h4>Recent Posts</h4>
+			<ul>
+			<?php
+				$recent_posts = wp_get_recent_posts();
+				foreach( $recent_posts as $recent ){
+					echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
+				}
+			?>
+			</ul>
+		</div>
+		<div class="span4">
+			<h4>Upcoming Events</h4>
+			<ul>
+			<?php
+				$recent_posts = wp_get_recent_posts();
+				foreach( $recent_posts as $recent ){
+					echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
+				}
+			?>
+			</ul>
+		</div>
+		<div class="span4">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
 	</footer><!-- #colophon -->
-</div><!-- #page -->
+</div><!-- .container -->
 
 <?php wp_footer(); ?>
-
 </body>
 </html>

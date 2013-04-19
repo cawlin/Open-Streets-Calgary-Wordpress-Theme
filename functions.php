@@ -144,3 +144,57 @@ add_action( 'wp_enqueue_scripts', 'open_streets_calgary_scripts' );
  * Implement the Custom Header feature
  */
 //require( get_template_directory() . '/inc/custom-header.php' );
+
+
+/**
+ * register more featured images for pages
+ */
+
+if( class_exists( 'kdMultipleFeaturedImages' ) ) {
+	$args1 = array(
+            'id' => 'featured-image-2',
+            'post_type' => 'page',      // Set this to post or page
+            'labels' => array(
+                'name'      => 'Featured image 2',
+                'set'       => 'Set featured image 2',
+                'remove'    => 'Remove featured image 2',
+                'use'       => 'Use as featured image 2',
+            )
+    );
+
+    $args2 = array(
+            'id' => 'featured-image-3',
+            'post_type' => 'page',      // Set this to post or page
+            'labels' => array(
+                'name'      => 'Featured image 3',
+                'set'       => 'Set featured image 3',
+                'remove'    => 'Remove featured image 3',
+                'use'       => 'Use as featured image 3',
+            )
+    );
+
+    new kdMultipleFeaturedImages( $args1 );
+    new kdMultipleFeaturedImages( $args2 );
+}
+
+
+/**
+ * register widget area for the homepage where a quote appears
+ */
+
+function register_widget_area() {
+    if( function_exists( 'register_sidebar' ) ) {
+        register_sidebar( array(
+            'name' => 'homepage-quote-area',
+            'id' => 'homepage-quote-area',
+            'before_widget' => '<div class="widget">',
+            'after_widget' => '</div>',
+            'before_title' => '<h1 class="title">',
+            'after_title' => '</h1>',
+        ) );
+    }
+}
+add_action( 'widgets_init', 'register_widget_area' );
+
+
+
