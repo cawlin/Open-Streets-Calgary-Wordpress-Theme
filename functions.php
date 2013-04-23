@@ -106,17 +106,39 @@ function open_streets_calgary_register_custom_background() {
 add_action( 'after_setup_theme', 'open_streets_calgary_register_custom_background' );
 
 /**
- * Register widgetized area and update sidebar with default widgets
+ * Register widgetized areas
  */
 function open_streets_calgary_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'open_streets_calgary' ),
-		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
+        'name' => 'homepage-quote-area',
+        'id' => 'homepage-quote-area',
+        'before_widget' => '<div class="widget">',
+        'after_widget' => '</div>',
+    ) );
+	register_sidebar( array(
+        'name' => 'footer-widget-left',
+        'id' => 'footer-widget-left',
+        'before_widget' => '<div class="widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="title">',
+        'after_title' => '</h4>',
+    ) );
+	register_sidebar( array(
+        'name' => 'footer-widget-middle',
+        'id' => 'footer-widget-middle',
+        'before_widget' => '<div class="widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="title">',
+        'after_title' => '</h4>',
+    ) );
+	register_sidebar( array(
+        'name' => 'footer-widget-right',
+        'id' => 'footer-widget-right',
+        'before_widget' => '<div class="widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="title">',
+        'after_title' => '</h4>',
+    ) );
 }
 add_action( 'widgets_init', 'open_streets_calgary_widgets_init' );
 
@@ -176,25 +198,6 @@ if( class_exists( 'kdMultipleFeaturedImages' ) ) {
     new kdMultipleFeaturedImages( $args1 );
     new kdMultipleFeaturedImages( $args2 );
 }
-
-
-/**
- * register widget area for the homepage where a quote appears
- */
-
-function register_widget_area() {
-    if( function_exists( 'register_sidebar' ) ) {
-        register_sidebar( array(
-            'name' => 'homepage-quote-area',
-            'id' => 'homepage-quote-area',
-            'before_widget' => '<div class="widget">',
-            'after_widget' => '</div>',
-            'before_title' => '<h1 class="title">',
-            'after_title' => '</h1>',
-        ) );
-    }
-}
-add_action( 'widgets_init', 'register_widget_area' );
 
 
 

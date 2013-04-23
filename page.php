@@ -24,16 +24,16 @@ get_header(); ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'open_streets_calgary' ), 'after' => '</div>' ) ); ?>
 			<?php edit_post_link( __( 'Edit', 'open_streets_calgary' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 		</div><!-- .span7 -->
-		<div class="span4 offset1">
+		<div id="page-sidebar" class="span4 offset1">
 			<?php
 				// add featured thumbnail and extra featured thumbnails via plugin
 				if ( has_post_thumbnail() ) { the_post_thumbnail(); }
 				if( class_exists( 'kdMultipleFeaturedImages' ) ) {
 			    	kd_mfi_the_featured_image( 'featured-image-2', 'page' );
-					kd_mfi_the_featured_image( 'featured-image-2', 'page' );
+					kd_mfi_the_featured_image( 'featured-image-3', 'page' );
 				}
 			?>
-		</div><!-- .span4 -->
+		</div><!-- #page-sidebar -->
 	</div><!-- .row -->
 </article><!-- #post-## -->
 

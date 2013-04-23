@@ -8,35 +8,26 @@
  */
 ?>
 
-	<footer id="colophon" class="row" role="contentinfo">
-		<div class="span4">
-			<h4>Recent Posts</h4>
-			<ul>
-			<?php
-				$recent_posts = wp_get_recent_posts();
-				foreach( $recent_posts as $recent ){
-					echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
-				}
-			?>
-			</ul>
-		</div>
-		<div class="span4">
-			<h4>Upcoming Events</h4>
-			<ul>
-			<?php
-				$recent_posts = wp_get_recent_posts();
-				foreach( $recent_posts as $recent ){
-					echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Look '.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
-				}
-			?>
-			</ul>
-		</div>
-		<div class="span4">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
-		</div>
-	</footer><!-- #colophon -->
 </div><!-- .container -->
+
+<footer id="colophon" class="row" role="contentinfo">
+	<div class="container">	
+		<div class="row">
+			<div class="span4" id="footer-left">
+				<?php dynamic_sidebar( 'footer-widget-left' ); ?>
+			</div>
+			<div class="span4" id="footer-middle">
+				<?php dynamic_sidebar( 'footer-widget-middle' ); ?>
+			</div>
+			<div class="span4" id="footer-right">
+				<h4>Subscribe to Our Newsletter</h4>
+				<script type="text/javascript" src="http://www.formstack.com/forms/js.php?1457049-3OIpaBm6m0-v3&jsonp"></script><noscript><a href="http://www.formstack.com/forms/?1457049-3OIpaBm6m0" title="Online Form">Online Form - Constant Contact Signup Form</a></noscript>
+				<a href="http://www.formstack.com/try-formstack?utm_source=h&utm_medium=jsembed&utm_campaign=fa&fa=h,1457049" title="Web Form Generator"></a>
+				
+			</div>
+		</div><!-- .row -->
+	</div><!-- .container -->
+</footer><!-- #colophon -->
 
 <?php wp_footer(); ?>
 </body>

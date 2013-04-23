@@ -27,9 +27,6 @@ and Blueprint http://www.blueprintcss.org/
 
 .sticky {
 }
-.hentry {
-	margin: 0 0 1.5em;
-}
 .byline {
 	display: none;
 }
@@ -167,23 +164,27 @@ object {
 
 /* =begin customizations
 ---------------------------------------------------------------------------------------------- */
-
-
-a {
-	color: #2f5aa9;
+body {
+	background: url(images/global-border.gif) repeat-x;
 }
+
+a { color: #2f5aa9; }
 
 /* =header
 ----------------------------------------------- */
 
-
+#masthead h1 {
+	margin: 30px 0 0 0;
+}
 
 #site-navigation {
 	border-bottom: 1px solid #d8d8d8;
 	padding: 30px 0 10px 0;
+	margin-bottom: 30px;
+	position: relative;
 }
 
-#site-navigation .menu ul {
+#site-navigation .menu-primary-container ul {
 	font-size: 20px;
 	font-weight: bold;
 	margin: 0;
@@ -198,6 +199,7 @@ a {
 	color: #333;
 }
 
+/* hide the "skip navigation" so only screen readers see it  */
 #site-navigation .screen-reader-text {
 	position:absolute;
 	left:-10000px;
@@ -207,10 +209,150 @@ a {
 	overflow:hidden;
 }
 
+#site-navigation .facebook-icon, .rss-icon {
+	position: absolute;
+	right: 0;
+	bottom: 5px;
+}
+
+#site-navigation .facebook-icon:hover, .rss-icon:hover {
+	opacity: 0.8;
+}
+
+#site-navigation .facebook-icon {
+	right: 32px;
+}
+
+/* =footer
+----------------------------------------------- */
+
+#colophon {
+	border-top: 1px solid #d8d8d8;
+	width: 100%;
+	padding: 30px 0;
+	margin: 30px 0 0 0;
+	background: url(images/global-border.gif) repeat-x left bottom #f4f4f4;
+}
+
+#colophon h4 {
+	padding: 8px 10px;
+	color: white;
+}
+
+#colophon ul {
+	margin-left: 0;
+	margin-bottom: 20px;
+}
+
+#colophon li {
+	list-style: none;
+	line-height: 2;
+}
+
+#colophon ul a {
+	color: #333;
+	text-decoration: underline;
+}
+
+#colophon ul a:hover {
+	color: #2f5aa9;
+}
+
+#footer-left h4 {
+	background-color: #2f5aa9;
+}
+
+#footer-middle h4 {
+	background-color: #da4e27;
+	
+}
+
+#footer-right h4 {
+	background-color: #488d41;
+}
 
 
+/* =homepage
+----------------------------------------------- */
+
+#splash {
+	margin-bottom: 30px;
+}
+
+#homepage header h1 {
+	margin-top: 0;
+}
+
+#homepage #quote-widget {
+
+}
+
+#homepage #quote-widget blockquote p {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+	
 
 
+/* =page
+----------------------------------------------- */
 
+#page-sidebar img {
+	margin-bottom: 20px;
+}
 
+/* =event calendar
+----------------------------------------------- */
 
+#tribe-events-calendar-header {
+	display: none;
+}
+
+/* =constant contact widget
+----------------------------------------------- */
+
+/* override a bunch of terrible styles from the
+constant contact signup form injected with their 
+embed javascript */
+
+.fsBody .fsForm {
+background: none !important;
+margin: 0 !important;
+border: none !important;
+}
+
+.fsRequiredMarker {
+	display: none !important;
+}
+
+form .fsSubmit {
+	padding: 0 !important;
+	text-align: left !important;
+	background: none !important;
+	margin: 0 !important;
+}
+
+.fsRowBody {
+	padding: 0 !important;
+}
+
+.fsSubmit input.fsSubmitButton {
+	font-size: 12px !important;
+}
+
+#field19595899 {
+	width: 290px !important;
+	max-width: 100% !important;
+}
+
+.fsFieldFocused {
+	background: none !important;
+}
+
+/* =events listing overrides
+----------------------------------------------- */
+
+#tribe-events-content {
+	padding: 0;
+}

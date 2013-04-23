@@ -28,7 +28,7 @@
 		<?php do_action( 'before' ); ?>
 			<header id="masthead" class="site-header" role="banner">
 				<hgroup>
-					<h1><img src="<?php bloginfo('template_directory'); ?>/images/open-streets-calgary-logo.png" width="620" height="107" alt="Open Streets Calgary"></h1>
+					<h1><a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/open-streets-calgary-logo.png" width="620" height="107" alt="Open Streets Calgary"></a></h1>
 				</hgroup>
 				
 				<nav id="site-navigation" role="navigation">
@@ -36,5 +36,7 @@
 						<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'open_streets_calgary' ); ?>"><?php _e( 'Skip to content', 'open_streets_calgary' ); ?></a>
 					</div>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+					<a href="http://facebook.com/openstreetscalgary"><img src="<?php bloginfo('template_directory'); ?>/images/facebook-icon.png" width="27" height="27" alt="Open Streerts Calgary on Facebook" class="facebook-icon"></a>
+					<a href="<?php bloginfo('rss2_url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/rss-icon.png" width="27" height="27" alt="Open Streerts Calgary on Facebook" class="rss-icon"></a>
 				</nav><!-- #site-navigation -->
 			</header><!-- #masthead -->
