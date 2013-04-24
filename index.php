@@ -12,10 +12,8 @@
  */
 
 get_header(); ?>
-
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
+<div class="row">
+	<div class="span7">
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
@@ -38,9 +36,12 @@ get_header(); ?>
 			<?php get_template_part( 'no-results', 'index' ); ?>
 
 		<?php endif; ?>
+	</div>
+	
+	<div class="offset1 span4">
+		<?php get_sidebar(); ?>
+	</div>
 
-		</div><!-- #content -->
-	</div><!-- #primary -->
+</div>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
