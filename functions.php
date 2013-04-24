@@ -132,8 +132,8 @@ function open_streets_calgary_widgets_init() {
         'after_title' => '</h4>',
     ) );
 	register_sidebar( array(
-        'name' => 'footer-widget-right',
-        'id' => 'footer-widget-right',
+        'name' => 'events-list-sidebar',
+        'id' => 'events-list-sidebar',
         'before_widget' => '<div class="widget">',
         'after_widget' => '</div>',
         'before_title' => '<h4 class="title">',

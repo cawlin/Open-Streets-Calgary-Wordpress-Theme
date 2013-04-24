@@ -371,6 +371,48 @@ form .fsSubmit {
 /* =events listing overrides
 ----------------------------------------------- */
 
-#tribe-events-content {
-	padding: 0;
+.event-list .tribe_events {
+	border-bottom: 1px solid #d8d8d8;
+	margin-bottom: 20px;
+}
+
+.event-list .tribe_events h4 {
+	margin-bottom: 0;
+}
+
+.event-list .event-list-post-meta {
+	line-height: auto;
+	margin-left: 0;
+	list-style: none;
+	
+}
+
+.event-list .event-list-date{
+	font-style: italic;
+}
+
+/* =events listing sidebar promo
+----------------------------------------------- */
+
+#event-sidebar {
+	padding-top: 10px;
+}
+
+#event-sidebar .widget {
+	background-color: #488d41;
+	padding: 10px 20px;
+	color: white;
+}
+
+/* =single event page
+----------------------------------------------- */
+
+.single-event-meta ul {
+	margin-left: 0;
+	list-style: none;
+}
+
+#single-event-container .summary {
+	border-bottom: 1px solid #d8d8d8;
+	margin-bottom: 15px;
 }
