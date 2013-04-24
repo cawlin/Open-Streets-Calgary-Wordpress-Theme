@@ -192,11 +192,17 @@ a { color: #2f5aa9; }
 
 #site-navigation .menu li {
 	display: inline-block;
-	padding-right: 20px;
+	padding-right: 15px;
 }
 
 #site-navigation .menu li a {
 	color: #333;
+}
+
+#site-navigation .menu li a:hover,
+#site-navigation .menu li.current-menu-item a {
+	color: #2f5aa9;
+	text-decoration: none;
 }
 
 /* hide the "skip navigation" so only screen readers see it  */
@@ -283,13 +289,25 @@ a { color: #2f5aa9; }
 	margin-top: 0;
 }
 
-#homepage #quote-widget {
 
+#quote-widget blockquote {
+	border-left: 0;
+	padding-left: 0;
 }
 
-#homepage #quote-widget blockquote p {
+#quote-widget blockquote p {
 	font-weight: bold;
 	font-size: 16px;
+}
+
+#quote-widget {
+	position: relative;
+}
+
+#quote-widget .large-quote {
+	position: absolute;
+	left: -48px;
+	top: 3px;
 }
 
 	

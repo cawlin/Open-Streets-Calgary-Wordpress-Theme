@@ -26,6 +26,7 @@ get_header(); ?>
 			<?php edit_post_link( __( 'Edit', 'open_streets_calgary' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 		</div><!-- .span7 -->
 		<div id="quote-widget" class="span4 offset1">
+			<img src="<?php bloginfo('template_directory'); ?>/images/large-quote.gif" width="38" height="28" alt="Quote:" class="large-quote">
 			<?php dynamic_sidebar( 'homepage-quote-area' ); ?>
 		</div><!-- .span4 -->
 	</div><!-- .row -->
