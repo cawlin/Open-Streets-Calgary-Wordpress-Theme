@@ -6,7 +6,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
+		<h1 class="entry-title single-blog-entry"><?php the_title(); ?></h1>
 
 		<div class="entry-meta">
 			<?php open_streets_calgary_posted_on(); ?>

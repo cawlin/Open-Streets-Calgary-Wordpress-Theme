@@ -12,7 +12,7 @@
  */
 
 get_header(); ?>
-<div class="row">
+<div class="row" id="blog-list">
 	<div class="span7">
 		<?php if ( have_posts() ) : ?>
 
@@ -41,7 +41,6 @@ get_header(); ?>
 	<div class="offset1 span4">
 		<?php get_sidebar(); ?>
 	</div>
-
-</div>
+</div><!-- .row -->
 
 <?php get_footer(); ?>

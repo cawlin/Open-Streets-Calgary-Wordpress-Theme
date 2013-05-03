@@ -22,148 +22,6 @@ and Blueprint http://www.blueprintcss.org/
 
 @import url('bootstrap/css/bootstrap.css'); 
 
-/* =Content
------------------------------------------------ */
-
-.sticky {
-}
-.byline {
-	display: none;
-}
-.single .byline,
-.group-blog .byline {
-	display: inline;
-}
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-}
-
-
-/* =Asides
------------------------------------------------ */
-
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-	display: none;
-}
-
-
-/* =Media
------------------------------------------------ */
-
-.entry-content img.wp-smiley,
-.comment-content img.wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
-}
-.wp-caption {
-	border: 1px solid #ccc;
-	margin-bottom: 1.5em;
-	max-width: 100%;
-}
-.wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin: 1.2% auto 0;
-	max-width: 98%;
-}
-.wp-caption-text {
-	text-align: center;
-}
-.wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
-}
-.site-content .gallery {
-	margin-bottom: 1.5em;
-}
-.gallery-caption {
-}
-.site-content .gallery a img {
-	border: none;
-	height: auto;
-	max-width: 90%;
-}
-.site-content .gallery dd {
-	margin: 0;
-}
-.site-content .gallery-columns-4 .gallery-item {
-}
-.site-content .gallery-columns-4 .gallery-item img {
-}
-
-/* Make sure embeds and iframes fit their containers */
-embed,
-iframe,
-object {
-	max-width: 100%;
-}
-
-
-/* =Navigation
------------------------------------------------ */
-
-.site-content [class*="navigation"] {
-	margin: 0 0 1.5em;
-	overflow: hidden;
-}
-[class*="navigation"] .previous {
-	float: left;
-	width: 50%;
-}
-[class*="navigation"] .next {
-	float: right;
-	text-align: right;
-	width: 50%;
-}
-
-/* =Comments
------------------------------------------------ */
-
-.comment-content a {
-	word-wrap: break-word;
-}
-.bypostauthor {
-}
-
-/* =Widgets
------------------------------------------------ */
-
-.widget {
-	margin: 0 0 1.5em;
-}
-
-/* Make sure select elements fit in widgets */
-.widget select {
-	max-width: 100%;
-}
-
-/* Search widget */
-.widget_search .submit {
-	display: none;
-}
-
-/* =Infinite Scroll
------------------------------------------------ */
-
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .navigation-paging, /* Older / Newer Posts Navigation (always hidden) */
-.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
-	display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
-.infinity-end.neverending .site-footer {
-	display: block;
-}
-
-/* =begin customizations
----------------------------------------------------------------------------------------------- */
 body {
 	background: url(images/global-border.gif) repeat-x;
 }
@@ -185,14 +43,14 @@ a { color: #2f5aa9; }
 }
 
 #site-navigation .menu-primary-container ul {
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bold;
 	margin: 0;
 }
 
 #site-navigation .menu li {
 	display: inline-block;
-	padding-right: 15px;
+	padding-right: 12px;
 }
 
 #site-navigation .menu li a {
@@ -206,7 +64,7 @@ a { color: #2f5aa9; }
 }
 
 /* hide the "skip navigation" so only screen readers see it  */
-#site-navigation .screen-reader-text {
+.screen-reader-text {
 	position:absolute;
 	left:-10000px;
 	top:auto;
@@ -227,6 +85,23 @@ a { color: #2f5aa9; }
 
 #site-navigation .facebook-icon {
 	right: 32px;
+}
+
+#drop-nav {
+	margin: 20px 0;
+	width: 100%;
+}
+
+@media (max-width: 980px){
+	#site-navigation .menu-primary-container ul {
+		font-size: 15px;
+	}
+}
+
+@media (min-width: 768px){
+	#drop-nav {
+		display: none;
+	}
 }
 
 /* =footer
@@ -289,7 +164,6 @@ a { color: #2f5aa9; }
 	margin-top: 0;
 }
 
-
 #quote-widget blockquote {
 	border-left: 0;
 	padding-left: 0;
@@ -309,9 +183,6 @@ a { color: #2f5aa9; }
 	left: -48px;
 	top: 3px;
 }
-
-	
-
 
 /* =page
 ----------------------------------------------- */
@@ -371,6 +242,10 @@ form .fsSubmit {
 /* =events listing overrides
 ----------------------------------------------- */
 
+.event-template-header {
+	margin-bottom: 20px;
+}
+
 .event-list .tribe_events {
 	border-bottom: 1px solid #d8d8d8;
 	margin-bottom: 20px;
@@ -415,4 +290,152 @@ form .fsSubmit {
 #single-event-container .summary {
 	border-bottom: 1px solid #d8d8d8;
 	margin-bottom: 15px;
+}
+
+
+/* =blog
+----------------------------------------------- */
+
+.entry-content {
+	margin-top: 20px;
+}
+
+#blog-list h2.entry-title, .single-blog-entry {
+	font-size: 24.5px;
+	margin: 0;
+}
+
+footer.entry-meta {
+	border-bottom: 1px solid #d8d8d8;
+	padding-bottom: 20px;
+	margin-bottom: 10px;
+}
+
+.widget_search form, .widget_search input {
+	margin-bottom: 0;
+}
+
+.widget_search label {
+	font-size: 17.5px;;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+/* =comments
+----------------------------------------------- */
+
+ol.comment-list {
+	margin: 0;
+	list-style: none;
+}
+
+ol.comment-list li.comment {
+	border: 1px solid #d8d8d8;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+ol.comment-list li.comment img {
+	float: left;
+	margin-right: 10px;
+}
+
+ol.comment-list .comment-author {
+	display: block;
+	overflow: hidden;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px dashed #d8d8d8;
+}
+
+ol.comment-list .comment-author .fn {
+	font-weight: bold;
+}
+
+ol.comment-list .reply {
+	text-align: right;
+}
+
+#comments #reply-title {
+	font-size: 17.5px;
+}
+
+#commentform textarea#comment {
+	width: 526px;
+}
+
+/* smaller width when replying inside another commment */
+li.comment #commentform textarea#comment {
+	width: 506px;
+}
+
+.comment-form-comment {
+	border-top: 1px dashed #d8d8d8;
+	padding-top: 10px;
+}
+
+.form-allowed-tags {
+	display: none;
+}
+
+.comment-content a {
+	word-wrap: break-word;
+}
+
+li.comment .depth-2, li.comment .depth-3, 
+li.comment .depth-4, li.comment .depth-5, 
+li.comment .depth-6, li.comment .depth-7, 
+li.comment .depth-8 {
+	margin-top: 10px;
+}
+
+/* =media
+----------------------------------------------- */
+
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+.wp-caption {
+	border: 1px solid #ccc;
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 1.2% auto 0;
+	max-width: 98%;
+}
+.wp-caption-text {
+	text-align: center;
+}
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+.site-content .gallery {
+	margin-bottom: 1.5em;
+}
+.gallery-caption {
+}
+.site-content .gallery a img {
+	border: none;
+	height: auto;
+	max-width: 90%;
+}
+.site-content .gallery dd {
+	margin: 0;
+}
+.site-content .gallery-columns-4 .gallery-item {
+}
+.site-content .gallery-columns-4 .gallery-item img {
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+	max-width: 100%;
 }

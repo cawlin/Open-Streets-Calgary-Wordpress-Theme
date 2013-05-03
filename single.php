@@ -6,10 +6,8 @@
  */
 
 get_header(); ?>
-
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
+<div class="row">
+	<div class="span7">
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
@@ -24,8 +22,10 @@ get_header(); ?>
 
 		<?php endwhile; // end of the loop. ?>
 
-		</div><!-- #content -->
-	</div><!-- #primary -->
+		</div><!-- .span7 -->
+	<div class="offset1 span4">
+		<?php get_sidebar(); ?>
+	</div>
+</div><!-- .row -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -110,6 +110,14 @@ add_action( 'after_setup_theme', 'open_streets_calgary_register_custom_backgroun
  */
 function open_streets_calgary_widgets_init() {
 	register_sidebar( array(
+		'name'          => __( 'Sidebar', 'open_streets_calgary' ),
+		'id'            => 'sidebar-1',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+	register_sidebar( array(
         'name' => 'homepage-quote-area',
         'id' => 'homepage-quote-area',
         'before_widget' => '<div class="widget">',
@@ -197,6 +205,53 @@ if( class_exists( 'kdMultipleFeaturedImages' ) ) {
 
     new kdMultipleFeaturedImages( $args1 );
     new kdMultipleFeaturedImages( $args2 );
+}
+
+
+/**
+ * Custom Menu Walker for Responsive Menus
+ *
+ * Creates a <select> menu instead of the default
+ * unordered list menus.
+ *
+ **/
+
+class Walker_Nav_Menu_Dropdown extends Walker_Nav_Menu{
+    function start_lvl(&$output, $depth){
+      $indent = str_repeat("\t", $depth); // don't output children opening tag (`<ul>`)
+    }
+
+    function end_lvl(&$output, $depth){
+      $indent = str_repeat("\t", $depth); // don't output children closing tag
+    }
+
+    function start_el(&$output, $item, $depth, $args){
+      // add spacing to the title based on the depth
+      $item->title = str_repeat("&nbsp;", $depth * 4).$item->title;
+
+
+
+        $output .= $indent . ' id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';  
+        $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';  
+        $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';  
+        $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';  
+        $attributes .= ! empty( $item->url )        ? ' value="'   . esc_attr( $item->url        ) .'"' : '';  
+
+        $item_output .= '<option'. $attributes .'>';  
+        $item_output .= $args->link_before .apply_filters( 'the_title', $item->title, $item->ID );  
+        $item_output .= '</option>';  
+
+        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );  
+
+
+
+      // no point redefining this method too, we just replace the li tag...
+      $output = str_replace('<li', '<option', $output);
+    }
+
+    function end_el(&$output, $item, $depth){
+      $output .= "</option>\n"; // replace closing </li> with the option tag
+    }
 }
 
 

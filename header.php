@@ -17,9 +17,9 @@
 	<!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 	<![endif]-->
-
 	<?php wp_head(); ?>	
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/bootstrap/css/bootstrap-responsive.css" media="screen" />
+	<script src="<?php bloginfo('template_directory'); ?>/js/jquery.selectnav-0.1.7.js" type="text/javascript" charset="utf-8"></script>
 	
 </head>
 
@@ -31,7 +31,7 @@
 					<h1><a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/open-streets-calgary-logo.png" width="620" height="107" alt="Open Streets Calgary"></a></h1>
 				</hgroup>
 				
-				<nav id="site-navigation" role="navigation">
+				<nav id="site-navigation" role="navigation" class="hidden-phone">
 					<div class="screen-reader-text skip-link">
 						<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'open_streets_calgary' ); ?>"><?php _e( 'Skip to content', 'open_streets_calgary' ); ?></a>
 					</div>
@@ -39,4 +39,17 @@
 					<a href="http://facebook.com/openstreetscalgary"><img src="<?php bloginfo('template_directory'); ?>/images/facebook-icon.png" width="27" height="27" alt="Open Streerts Calgary on Facebook" class="facebook-icon"></a>
 					<a href="<?php bloginfo('rss2_url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/rss-icon.png" width="27" height="27" alt="Open Streerts Calgary on Facebook" class="rss-icon"></a>
 				</nav><!-- #site-navigation -->
+				
+				<!-- Mobile Navigation -->
+				<?php 
+					if ( has_nav_menu( 'primary' ) ) {
+						wp_nav_menu( array( 
+							'show_description' => false,
+							'menu' => 'primary', 
+							'items_wrap' => '<select id="drop-nav"><option value="">Select a page...</option>%3$s</select>',
+							'container' => false,
+							'walker'  => new Walker_Nav_Menu_Dropdown(),
+							'theme_location' => 'primary')); 
+					}
+				?>				
 			</header><!-- #masthead -->
