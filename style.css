@@ -42,7 +42,7 @@ a { color: #2f5aa9; }
 	position: relative;
 }
 
-#site-navigation .menu-primary-container ul {
+#site-navigation .menu {
 	font-size: 18px;
 	font-weight: bold;
 	margin: 0;
@@ -85,23 +85,6 @@ a { color: #2f5aa9; }
 
 #site-navigation .facebook-icon {
 	right: 32px;
-}
-
-#drop-nav {
-	margin: 20px 0;
-	width: 100%;
-}
-
-@media (max-width: 980px){
-	#site-navigation .menu-primary-container ul {
-		font-size: 15px;
-	}
-}
-
-@media (min-width: 768px){
-	#drop-nav {
-		display: none;
-	}
 }
 
 /* =footer
@@ -189,6 +172,16 @@ a { color: #2f5aa9; }
 
 #page-sidebar img {
 	margin-bottom: 20px;
+}
+
+.edit-link {
+	display: block;
+	padding: 20px 0 0 0;
+}
+
+.edit-link a {
+	background: #d8d8d8;
+	padding: 5px 10px;
 }
 
 /* =event calendar
@@ -438,4 +431,49 @@ embed,
 iframe,
 object {
 	max-width: 100%;
+}
+
+/* =responsive specific styles
+----------------------------------------------- */
+
+@media (max-width: 980px) {	
+	#site-navigation .menu {
+		font-size: 15px;
+	}	
+}
+
+@media (max-width: 767px) {	
+	.facebook-icon, .rss-icon {
+		display: none;
+	}
+	
+	#colophon {
+		padding-top: 10px;
+		margin-top: 10px;
+		padding-bottom: 15px;
+	}
+	
+	#colophon .widget {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	
+	#quote-widget {
+		padding-top: 10px;
+	}
+	
+	#quote-widget blockquote {
+		border-left: 5px solid #d8d8d8;
+		padding-left: 10px;
+	}
+
+	#quote-widget blockquote p {
+		font-weight: bold;
+		font-size: 16px;
+	}
+
+	#quote-widget .large-quote {
+		display: none;
+	}
+	
 }
