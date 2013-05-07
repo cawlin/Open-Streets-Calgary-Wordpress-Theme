@@ -145,6 +145,7 @@ a { color: #2f5aa9; }
 
 #homepage header h1 {
 	margin-top: 0;
+	margin-bottom: 30px;
 }
 
 #quote-widget blockquote {
