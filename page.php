@@ -31,6 +31,8 @@ get_header(); ?>
 				if( class_exists( 'kdMultipleFeaturedImages' ) ) {
 			    	kd_mfi_the_featured_image( 'featured-image-2', 'page' );
 					kd_mfi_the_featured_image( 'featured-image-3', 'page' );
+					kd_mfi_the_featured_image( 'featured-image-4', 'page' );
+					kd_mfi_the_featured_image( 'featured-image-5', 'page' );
 				}
 			?>
 		</div><!-- #page-sidebar -->

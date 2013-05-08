@@ -73,18 +73,10 @@ a { color: #2f5aa9; }
 	overflow:hidden;
 }
 
-#site-navigation .facebook-icon, .rss-icon {
+#fb-header-like {
 	position: absolute;
 	right: 0;
-	bottom: 5px;
-}
-
-#site-navigation .facebook-icon:hover, .rss-icon:hover {
-	opacity: 0.8;
-}
-
-#site-navigation .facebook-icon {
-	right: 32px;
+	bottom: 7px;
 }
 
 /* =footer
@@ -145,7 +137,6 @@ a { color: #2f5aa9; }
 
 #homepage header h1 {
 	margin-top: 0;
-	margin-bottom: 30px;
 }
 
 #quote-widget blockquote {
@@ -170,6 +161,10 @@ a { color: #2f5aa9; }
 
 /* =page
 ----------------------------------------------- */
+
+h1 {
+	margin-bottom: 30px;
+}
 
 #page-sidebar img {
 	margin-bottom: 20px;
@@ -449,15 +444,18 @@ object {
 
 @media (max-width: 980px) {	
 	#site-navigation .menu {
-		font-size: 15px;
-	}	
-}
-
-@media (max-width: 767px) {	
-	.facebook-icon, .rss-icon {
+		font-size: 14px;
+	}
+	#fb-header-like {
 		display: none;
 	}
+}
+
+@media (max-width: 767px) {
 	
+	#fb-header-like {
+		display: none;
+	}	
 	#colophon {
 		padding-top: 10px;
 		margin-top: 10px;

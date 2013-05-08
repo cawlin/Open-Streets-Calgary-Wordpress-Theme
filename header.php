@@ -36,7 +36,6 @@
 						<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'open_streets_calgary' ); ?>"><?php _e( 'Skip to content', 'open_streets_calgary' ); ?></a>
 					</div>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-					<a href="http://facebook.com/openstreetscalgary"><img src="<?php bloginfo('template_directory'); ?>/images/facebook-icon.png" width="27" height="27" alt="Open Streerts Calgary on Facebook" class="facebook-icon"></a>
-					<a href="<?php bloginfo('rss2_url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/rss-icon.png" width="27" height="27" alt="Open Streerts Calgary on Facebook" class="rss-icon"></a>
+					<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Fopenstreetscalgary&amp;send=false&amp;layout=button_count&amp;width=86&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:86px; height:21px;" allowTransparency="true" id="fb-header-like"></iframe>
 				</nav><!-- #site-navigation -->
 			</header><!-- #masthead -->

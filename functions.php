@@ -203,8 +203,32 @@ if( class_exists( 'kdMultipleFeaturedImages' ) ) {
             )
     );
 
+   $args3 = array(
+            'id' => 'featured-image-4',
+            'post_type' => 'page',      // Set this to post or page
+            'labels' => array(
+                'name'      => 'Featured image 4',
+                'set'       => 'Set featured image 4',
+                'remove'    => 'Remove featured image 4',
+                'use'       => 'Use as featured image 4',
+            )
+    );
+
+   $args4 = array(
+            'id' => 'featured-image-5',
+            'post_type' => 'page',      // Set this to post or page
+            'labels' => array(
+                'name'      => 'Featured image 5',
+                'set'       => 'Set featured image 5',
+                'remove'    => 'Remove featured image 5',
+                'use'       => 'Use as featured image 5',
+            )
+    );
+
     new kdMultipleFeaturedImages( $args1 );
     new kdMultipleFeaturedImages( $args2 );
+    new kdMultipleFeaturedImages( $args3 );
+    new kdMultipleFeaturedImages( $args4 );
 }
 
 
