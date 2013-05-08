@@ -15,6 +15,7 @@
 		<div class="row">
 			<div class="span4" id="footer-left">
 				<?php dynamic_sidebar( 'footer-widget-left' ); ?>
+				<p><a href="/blog">View All Posts</a></p>
 			</div>
 			<div class="span4" id="footer-middle">
 				<?php dynamic_sidebar( 'footer-widget-middle' ); ?>
